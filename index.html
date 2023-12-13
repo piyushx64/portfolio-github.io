@@ -207,15 +207,41 @@
                 <p>Get In Touch</p>
             </div>
             <div class="contact">
-                <form action="https://formspree.io/f/xzblnqql" method="POST">
-                    <input type="text" name="NAME" placeholder="Name" required>
-                    <input type="email" name="EMAIL" placeholder="Email" required>
-                    <input type="text" name="SUBJECT" placeholder="Subject">
-                    <textarea name="MESSAGE" placeholder="Message"></textarea>
-                    <input type="submit" value="Send Message" class="submit">
-                    <button type="submit">Send</button>
-                </form>
-            </div>
+    <form id="contactForm" action="https://formspree.io/f/xzblnqql" method="POST">
+        <input type="text" name="NAME" id="nameInput" placeholder="Name" required>
+        <input type="email" name="EMAIL" id="emailInput" placeholder="Email" required>
+        <input type="text" name="SUBJECT" id="subjectInput" placeholder="Subject">
+        <textarea name="MESSAGE" id="messageInput" placeholder="Message"></textarea>
+        <button type="button" onclick="submitForm()">Send Message</button>
+    </form>
+    <span id="msg"></span>
+</div>
+
+<script>
+    function submitForm() {
+        var form = document.getElementById("contactForm");
+        var formData = new FormData(form);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://formspree.io/f/xzblnqql", true);
+        xhr.setRequestHeader("Accept", "application/json");
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    document.getElementById("msg").innerHTML = "Message sent successfully!";
+                    // Optionally, you can reset the form after successful submission
+                    form.reset();
+                } else {
+                    document.getElementById("msg").innerHTML = "There was an error. Please try again.";
+                }
+            }
+        };
+
+        xhr.send(formData);
+    }
+</script>
+
         </div>
     </section>
         
