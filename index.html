@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" class="stylesheet">
 </head> 
-
 <body>
 
     <header class="header-area">
@@ -111,7 +110,7 @@
                                 
                                 <div class="timeline-item">
                                     <div class="circle-dot"></div>
-                                    <h3 class="timeline-title">12TH</h3>
+                                    <h3 class="timeline-title">12TH-73%</h3>
                                     <h4 class="timeline-title">C.R.K. College Hajipur</h4>
                                     <h4 class="timeline-title">
                                         <i class="fa fa-calendar"></i> 2020-2022
@@ -121,7 +120,7 @@
                                 <div class="timeline-item">
                                     <div class="circle-dot"></div>
                                     <h3 class="timeline-title">
-                                        10TH
+                                        10TH-63%
                                     </h3>
                                     <h4 class="timeline-title"> Mathura Gokhula High School</h4>
                                     <h4 class="timeline-title">
@@ -207,41 +206,16 @@
                 <p>Get In Touch</p>
             </div>
             <div class="contact">
-    <form id="contactForm" action="https://formspree.io/f/xzblnqql" method="POST">
-        <input type="text" name="NAME" id="nameInput" placeholder="Name" required>
-        <input type="email" name="EMAIL" id="emailInput" placeholder="Email" required>
-        <input type="text" name="SUBJECT" id="subjectInput" placeholder="Subject">
-        <textarea name="MESSAGE" id="messageInput" placeholder="Message"></textarea>
-        <button type="button" onclick="submitForm()">Send Message</button>
-    </form>
-    <span id="msg"></span>
-</div>
-
-<script>
-    function submitForm() {
-        var form = document.getElementById("contactForm");
-        var formData = new FormData(form);
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://formspree.io/f/xzblnqql", true);
-        xhr.setRequestHeader("Accept", "application/json");
-        
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    document.getElementById("msg").innerHTML = "Message sent successfully!";
-                    // Optionally, you can reset the form after successful submission
-                    form.reset();
-                } else {
-                    document.getElementById("msg").innerHTML = "There was an error. Please try again.";
-                }
-            }
-        };
-
-        xhr.send(formData);
-    }
-</script>
-
+                <form action="https://formspree.io/f/xzblnqql" method="POST">
+                    <input type="text" name="NAME" placeholder="Name" required>
+                    <input type="email" name="EMAIL" placeholder="Email" required>
+                    <input type="text" name="SUBJECT" placeholder="Subject">
+                    <textarea name="MESSAGE" placeholder="Message"></textarea>
+                    <input type="submit" value="Send Message" class="submit">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            
         </div>
     </section>
         
